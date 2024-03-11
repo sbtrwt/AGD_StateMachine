@@ -9,7 +9,7 @@ namespace StatePattern.Enemy
     public interface IState
     {
         // Reference to the owner (e.g., the enemy character) that holds this state.
-        public OnePunchManController Owner { get; set; }
+        public EnemyController Owner { get; set; }
 
         // Called when the owner enters this state.
         public void OnStateEnter();
@@ -19,5 +19,13 @@ namespace StatePattern.Enemy
 
         // Called when the owner exits this state.
         public void OnStateExit();
+    }
+    public enum States
+    {
+        IDLE,
+        ROTATING,
+        SHOOTING,
+        PATROLLING,
+        CHASING
     }
 }

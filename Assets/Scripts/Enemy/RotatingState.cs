@@ -9,7 +9,8 @@ namespace StatePattern.Enemy
 {
     public class RotatingState : IState
     {
-        public OnePunchManController Owner { get; set; }
+        public EnemyController Owner { get; set; }
+
         private OnePunchManStateMachine stateMachine;
         private float targetRotation;
 
@@ -22,7 +23,7 @@ namespace StatePattern.Enemy
             // Calculate and set the character's rotation based on the target rotation.
             Owner.SetRotation(CalculateRotation());
             if (IsRotationComplete())
-                stateMachine.ChangeState(OnePunchManStates.IDLE);
+                stateMachine.ChangeState(States.IDLE);
         }
 
         public void OnStateExit() => targetRotation = 0;
