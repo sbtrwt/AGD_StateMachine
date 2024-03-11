@@ -6,7 +6,7 @@ namespace StatePattern.Enemy
 {
     public class IdleState : IState
     {
-        public OnePunchManController Owner { get; set; }
+        public EnemyController Owner { get; set; }
         private OnePunchManStateMachine stateMachine;
         private float timer;
 
