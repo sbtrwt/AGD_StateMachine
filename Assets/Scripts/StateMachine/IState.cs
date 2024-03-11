@@ -9,4 +9,5 @@ namespace StatePattern.StateMachine
         public void Update();
         public void OnStateExit();
     }
+  
 }
